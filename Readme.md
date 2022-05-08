@@ -1,4 +1,6 @@
-![Logo of the project](https://bulungula-tech-centre.github.io/assets/images/team/delta.png)
+
+<img src="https://bulungula-tech-centre.github.io/assets/images/team/delta.png" alt="drawing" width="150"/>
+
 # Name of the project
 > Additional information or tagline
 
@@ -60,6 +62,75 @@ packagemanager deploy awesome-project -s server.com -u username -p password
 ```
 
 And again you'd need to tell what the previous code actually does.
+
+## Modules used in this project
+
+### Clean CQRS architecture
+
+Clean architecture is a well-etablished API architecture that focusses on splitting up the API into separate layers that contain different purposes. These layers are as follows:
+ - Domain Layer
+ - Application Layer
+ - Infrastructure Layer
+ - UI/API Layer
+
+Note that these layers have strict dependency rules working from the outside in. This means that the **domain layer is dependant on none of the others**, the **application layer only dependent on the domain layer** and finally **the infrastructure and UI/API layer dependant only on the application layer**
+
+<img src="https://jasontaylor.dev/wp-content/uploads/2020/01/Figure-01-2.png" alt="drawing" width="400" />
+
+#### Domain Layer
+The domain layer contains enterprise-wide logic and types including: 
+ - Data Models (entities)
+ - Value Objects
+ - System-wide interfaces and utility classes
+ - Some exceptions (eg. data specific exceptions)
+ 
+#### Application Layer
+The application layer contains all business logic and types as can be seen below:
+ - Interfaces
+ - Models
+ - Logic
+ - Commands/Queries
+ - Validators
+ - Exceptions
+ - Behaviours
+ - Mapping
+ 
+#### Infrastrucutre Layer 
+The infrastructure layer handles all external concerns such as: 
+  - Persistence (data layer and ORMs)
+  - Identity (or other auth providers)
+  - File System
+  - System Clock
+  - External Gateways to API Clients
+  - Cache
+  - Migrations
+
+#### UI/API Layer
+This contains the interface of the application to the outside world. In this template, it consists of the Web API framework including controllers, middleware and startup amongst others.
+
+### MediatR
+Mediatr is a package that helps manage the flow of traffic in a manner that upholds the separation of concern principle and minimises dependencies. It simply uses handlers along with models to route traffic to the correct place. It also has built-in behaviours that can easily be attached before and/or after each request.
+
+### Sentry
+
+### Dependency Injection
+
+### ASP.NET Core
+
+The HTTP response status code are as follows:
+- 400 Bad Request
+- 401 Unauthorised
+- 403 Forbidden Access
+- 404 Not Found
+- 500 Internal Server Error
+
+Swagger is an automatic API documentation tool and here is the link:
+
+### Fluent validation
+
+### Entity Framework migrations
+
+### 
 
 ## Features
 
