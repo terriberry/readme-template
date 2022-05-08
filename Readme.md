@@ -109,26 +109,46 @@ The infrastructure layer handles all external concerns such as:
 This contains the interface of the application to the outside world. In this template, it consists of the Web API framework including controllers, middleware and startup amongst others.
 
 ### MediatR
-Mediatr is a package that helps manage the flow of traffic in a manner that upholds the separation of concern principle and minimises dependencies. It simply uses handlers along with models to route traffic to the correct place. It also has built-in behaviours that can easily be attached before and/or after each request.
+[Mediatr](https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-part-3-mediatr-library/) is a package that helps manage the flow of traffic in a manner that upholds the separation of concern principle and minimises dependencies. 
+It simply uses handlers along with models to route traffic to the correct place. It also has built-in behaviours that can easily be attached before and/or after each request.
 
 ### Sentry
 
 ### Dependency Injection
 
+
 ### ASP.NET Core
 
-The HTTP response status code are as follows:
+#### REST API
+
+#### Authentication & Authorization
+
+#### 
+
+#### HTTP response status code:
 - 400 Bad Request
 - 401 Unauthorised
 - 403 Forbidden Access
 - 404 Not Found
 - 500 Internal Server Error
 
+#### Swagger documentation
 Swagger is an automatic API documentation tool and here is the link:
 
 ### Fluent validation
 
-### Entity Framework migrations
+### Entity Framework Core
+
+### PostgreSQL database provider connection
+
+### SQL Server database provider connection
+
+### in-memory database
+
+### Migrations
+
+### Code First 
+
 
 ### 
 
