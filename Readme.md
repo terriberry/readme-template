@@ -9,16 +9,34 @@ awesome when someone starts to use it.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+Here is how to get the project up and running:
 
+VS Code:
+First head to the directory containing the Program.cs file and run the following commands
 ```shell
-packagemanager install awesome-project
-awesome-project start
-awesome-project "Do something!"  # prints "Nah."
+dotnet build
+dotnet run
 ```
+```dotnet build``` will compile the project for the first time.
+If the project compiles correctly, running ```dotnet run``` returns an output as follows:
+```shell
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:7089
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5095
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/terrilee/Documents/Delta/practiceBE/minimalAPIPractice1/
+```
+The project is running on localhost on ```https://localhost:7089```.
+Swagger is automatically configured and can be accessed by appending the localhost url with: ```/swagger/index.html```. For example: ```https://localhost:7089/swagger/index.html```.
+Swagger is an automatic API documentation tool and will look something like this:
 
-Here you should say what actually happens when you execute the code above.
+<img src="https://static1.smartbear.co/swagger/media/images/tools/opensource/swagger_ui.png?ext=.png" alt="Image" />
+
 
 ### Initial Configuration
 
@@ -116,14 +134,14 @@ It simply uses handlers along with models to route traffic to the correct place.
 
 ### Dependency Injection
 
+### Domain
+
 
 ### ASP.NET Core
 
 #### REST API
 
 #### Authentication & Authorization
-
-#### 
 
 #### HTTP response status code:
 - 400 Bad Request
