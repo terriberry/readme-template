@@ -11,14 +11,27 @@ awesome when someone starts to use it.
 
 Here is how to get the project up and running:
 
-VS Code:
-First head to the directory containing the Program.cs file and run the following commands
+VS Code
+
+This project uses .NET ```5```. Make sure you have the correct .NET SDK installed in your machine. Run the following command to check the versions:
+
+```shell
+dotnet --list-sdks
+```
+Output similiar to the following appears:
+```shell
+3.1.100 [C:\program files\dotnet\sdk]
+5.0.100 [C:\program files\dotnet\sdk]
+6.0.100 [C:\program files\dotnet\sdk]
+```
+
+Head to the directory containing the Program.cs file and run the following commands
 ```shell
 dotnet build
 dotnet run
 ```
 ```dotnet build``` will compile the project for the first time.
-If the project compiles correctly, running ```dotnet run``` returns an output as follows:
+If the project compiles correctly, running ```dotnet run``` returns an output similiar to this:
 ```shell
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: https://localhost:7089
@@ -33,10 +46,6 @@ info: Microsoft.Hosting.Lifetime[0]
 ```
 The project is running on localhost on ```https://localhost:7089```.
 Swagger is automatically configured and can be accessed by appending the localhost url with: ```/swagger/index.html```. For example: ```https://localhost:7089/swagger/index.html```.
-Swagger is an automatic API documentation tool and will look something like this:
-
-<img src="https://static1.smartbear.co/swagger/media/images/tools/opensource/swagger_ui.png?ext=.png" alt="Image" />
-
 
 ### Initial Configuration
 
