@@ -1,5 +1,5 @@
 
-<img src="https://bulungula-tech-centre.github.io/assets/images/team/delta.png" alt="drawing" width="150"/>
+<img position="right" src="https://bulungula-tech-centre.github.io/assets/images/team/delta.png" alt="drawing" width="150"/>
 
 # Name of the project
 > Additional information or tagline
@@ -11,7 +11,7 @@ awesome when someone starts to use it.
 
 Here is how to get the project up and running:
 
-VS Code
+**VS Code**
 
 This project uses .NET ```5```. Make sure you have the correct .NET SDK installed in your machine. Run the following command to check the versions:
 
@@ -47,23 +47,50 @@ info: Microsoft.Hosting.Lifetime[0]
 The project is running on localhost on ```https://localhost:7089```.
 Swagger is automatically configured and can be accessed by appending the localhost url with: ```/swagger/index.html```. For example: ```https://localhost:7089/swagger/index.html```.
 
+
 ### Initial Configuration
 
-Some projects require initial configuration (e.g. access tokens or keys, `npm i`).
-This is the section where you would document those requirements.
+#### Sentry
+Sentry captures data by using an SDK within your application’s runtime. Here is the setup guide from their [website](https://docs.sentry.io/platforms/dotnet/)
+
+Install the NuGet package to add the Sentry dependency:
+
+**dotnet core cli**
+```shell
+dotnet add package Sentry -v 3.17.1
+```
+Configuration should happen as early as possible in your application's lifecycle.
+
+Initialize in the Main method in Program.cs:
+```C#
+using Sentry;
+
+using (SentrySdk.Init(o =>
+{
+    o.Dsn = "https://examplePublicKey@o0.ingest.sentry.io/0";
+    o.MaxBreadcrumbs = 50;
+    o.Debug = true;
+})
+{
+    // app code here
+}
+```
+**Dsn**: Sentry automatically assigns you a Data Source Name (DSN) when you create a project to start monitoring events in your app. DSN tells the Sentry SDK where to send events so the events are associated with the correct project.</br></br>
+**Debug**: Turns debug mode on or off. If debug is enabled SDK will attempt to print out useful debugging information if something goes wrong with sending the event. The default is always false.</br></br>
+**MaxBreadcrumbs**: This variable controls the total amount of breadcrumbs that should be captured. This defaults to 100.
+
+#### PostgreSQL database connection
+
+
+#### SQL Server database connection
+
+
 
 ## Developing
 
 Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
-```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
-packagemanager install
-```
-
-And state what happens step-by-step.
 
 ### Building
 
@@ -90,9 +117,13 @@ packagemanager deploy awesome-project -s server.com -u username -p password
 
 And again you'd need to tell what the previous code actually does.
 
-## Modules used in this project
+## Introduction
 
-### Clean CQRS architecture
+### Intent architect
+This project was generated using Application templates created by the Intent Architect and The Delta platform team. Here is the link to the [Intent Architect website](https://intentarchitect.com/docs/articles/getting-started/welcome/welcome.html). For more information on how the Application templates work, head over to the documentation on [gitbook](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/mgu3uWRrevqSfLSu6Yml/platform-application-templates/overview)
+
+
+### Clean architecture
 
 Clean architecture is a well-etablished API architecture that focusses on splitting up the API into separate layers that contain different purposes. These layers are as follows:
  - Domain Layer
@@ -135,49 +166,102 @@ The infrastructure layer handles all external concerns such as:
 #### UI/API Layer
 This contains the interface of the application to the outside world. In this template, it consists of the Web API framework including controllers, middleware and startup amongst others.
 
-### MediatR
-[Mediatr](https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-part-3-mediatr-library/) is a package that helps manage the flow of traffic in a manner that upholds the separation of concern principle and minimises dependencies. 
-It simply uses handlers along with models to route traffic to the correct place. It also has built-in behaviours that can easily be attached before and/or after each request.
+### CQRS & MediatR
+[CQRS](https://www.ibm.com/cloud/architecture/architectures/event-driven-cqrs-pattern/) is a pattern that splits the command and query responsibility into separate classes. This means that reads are sperate from writes. It aims to maximise performance, scalability and simplicity.
 
-### Sentry
+[Mediatr](https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-part-3-mediatr-library/) is a package that helps manage the flow of traffic in a manner that upholds the separation of concern principle and minimises dependencies. It simply uses handlers along with models to route traffic to the correct place. It also has built-in behaviours that can easily be attached before and/or after each request.
 
-### Dependency Injection
+### Database Info and ORM
+This section details information about the database itself and how the API manages and interacts with it.
 
-### Domain
+#### Migrations
+Migrations are managed by [DbUp](https://dbup.readthedocs.io/en/latest/). The migration manager is a separate application within the infrastructure layer and is designed to be easily run by pipelines. One simply needs to run the script and it will take care of the rest. In order to add migrations, SQL scripts must be generated by the developer and copied into the scripts folder according to naming conventions. For naming conventions see the Delta API Standards section on migrations standards.
+
+#### Database
+The template is configured with a PostgreSQL database. PGAdmin is recommended to be installed for database management and querying of data during development.
+
+#### Data Access
+##### Repository Layer
+
+### Delta API Standards
+See below for some standards that must be adhered to when building on top of this API template.
+
+#### Migrations 
+Migrations in the template are managed by DbUp in a separate Infrastructure.Migrations application within the solution. In order to run the migrations one simply needs to run the application and it will handle the rest. It is recommended that this is automated into the pipelines themselves. The commands that are run are as follows:
+
+`dotnet build <project path and name>/Infrastructure.Db.Migrator/Infrastructure.Db.Migrator.csproj`  
+`dotnet run <project path and name>/Infrastructure.Db.Migrator/Infrastructure.Db.Migrator.csproj`
+
+In order to add new scripts to the project the raw sql was my coded and added as a sql file into the scripts folder. By default all sql scripts are embedded into the project. Please note the naming convention for sql scripts as described in the section below.
+
+##### Naming Standards
+The following naming convention must be applied to all migration scripts:
+
+    <unix datetime in seconds>_<table description>_<operation description>.sql
+    <unix datetime in seconds>_<view name>_<operation description>.sql
+    <unix datetime in seconds>_<procedure name>_<operation description>.sql
+    <unix datetime in seconds>_<function name>_<operation description>.sql
+
+#### Auditable Entity
+All entities should inherit from the base auditable entity to ensure certain base columns appear on all database tables. These columns include: 
+ - CreatedAt
+ - CreatedBy
+ - LastModified
+ - LastModifiedBy
+ - DeletedAt
+ - DeletedBy
+
+Note that the assigning of values to these objects is automatically handled by the framework.
+
+#### Containerizing
+In order to spin up the application in a docker container, a dockerfile has been provided in the API project. 
+
+Spinning up the container involves:
+1. Building it from the tds-clean-api-template\tds-clean-api-template directory with the following command :
+````
+docker build -t tds-clean-api-template -f API\Dockerfile .
+````
+2. Running the container with this command:
+````
+docker run -p 8080:80 --name tds-clean-api-template-local tds-clean-api-template
+````
+Notes: 
+- The dockerfile exposes port 80 which is then forwarded to port 8080. This means that the app will be available on http://localhost:8080.
+- The period at the end of the build command is to indicate the context is the current directory, not for grammar in this markdown file.
 
 
-### ASP.NET Core
+##### Container environmental variables
+The environmental variables can be added to the Dockerfile, or via the commandline while running docker. 
 
-#### REST API
+To add variables to the Dockerfile can be done with the header ENV:
+````
+ENV DATABASE_CONNECTION_STRING=XXXX
+````
 
-#### Authentication & Authorization
+To add to the docker run command, add via the -e flag: 
+````
+-e DATABASE_CONNECTION_STRING=XXXX 
+````
+Take note that in a Local environment the database host should change from localhost to host.docker.internal.
 
-#### HTTP response status code:
+#### Validation
+All validation of requests is to be done using [fluent validator](https://fluentvalidation.net/). 
+
+#### Logging
+Logging has been set up with [Serilog](https://serilog.net/) that performs console logging as well as logging to AWS CloudWatch. Default logging behaviour of requests and poor performance has already been configured. On top of this the following responses are automatically logged with error messages:
 - 400 Bad Request
 - 401 Unauthorised
 - 403 Forbidden Access
 - 404 Not Found
 - 500 Internal Server Error
 
-#### Swagger documentation
-Swagger is an automatic API documentation tool and here is the link:
+Additional logging is welcome as long as sensitive information is not divulged. Some good tips and hints on how to effectively log can be found [here](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
 
-### Fluent validation
+Note that all unhandled exceptions are logged to [Sentry](https://sentry.io/welcome/?utm_source=google&utm_medium=cpc&utm_campaign=9575834316&content=445957162983&utm_term=sentry&gclid=Cj0KCQiAs5eCBhCBARIsAEhk4r54RrW4n0PC5i296nyraRtipzDHpVX2el6yWdkId9Vmz7KB6aq4Vc0aAixkEALw_wcB). It is required that the Sentry project must be set up to notify a slack channel of all non-local exceptions.
 
-### Entity Framework Core
-
-### PostgreSQL database provider connection
-
-### SQL Server database provider connection
-
-### in-memory database
-
-### Migrations
-
-### Code First 
+Performance of long-running transactions and transactions in the baserepository is also monitored in sentry and can be viewed under the performance monitoring tab of the project. The default samplerate is set to 0.0 for safety reasons and should be adjusted to the rate required by your project.
 
 
-### 
 
 ## Features
 
