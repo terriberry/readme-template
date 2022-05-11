@@ -30,64 +30,55 @@ Head to the directory containing the Program.cs file and run the following comma
 dotnet build
 dotnet run
 ```
-```dotnet build``` will compile the project for the first time.
-If the project compiles correctly, running ```dotnet run``` returns an output similiar to this:
-```shell
-info: Microsoft.Hosting.Lifetime[14]
-      Now listening on: https://localhost:7089
-info: Microsoft.Hosting.Lifetime[14]
-      Now listening on: http://localhost:5095
-info: Microsoft.Hosting.Lifetime[0]
-      Application started. Press Ctrl+C to shut down.
-info: Microsoft.Hosting.Lifetime[0]
-      Hosting environment: Development
-info: Microsoft.Hosting.Lifetime[0]
-      Content root path: /Users/terrilee/Documents/Delta/practiceBE/minimalAPIPractice1/
-```
-The project is running on localhost on ```https://localhost:7089```.
-Swagger is automatically configured and can be accessed by appending the localhost url with: ```/swagger/index.html```. For example: ```https://localhost:7089/swagger/index.html```.
+The project is by default running on localhost: ```http://localhost:63144/```.
+Swagger is pre-configured and will automatically route to ```http://localhost:63144/index.html``` which displays the swagger doc
 
 
 ### Initial Configuration
 ***
 #### Sentry
-Sentry captures data by using an SDK within your application’s runtime. Here is the setup guide from their [website](https://docs.sentry.io/platforms/dotnet/)
+Sentry captures data by using an SDK within your application’s runtime. Here is a guide from their [website](https://docs.sentry.io/platforms/dotnet/)
 
-Install the NuGet package to add the Sentry dependency:
+Sentry is initialized in the appsettings.json:
+```.json
+"Sentry": {
+    "Dsn": "Test",
+    "SampleRate": 1.0
+  }
 
-**dotnet core cli**
-```shell
-dotnet add package Sentry -v 3.17.1
 ```
-Configuration should happen as early as possible in your application's lifecycle.
+**dsn**: Sentry automatically assigns you a Data Source Name (DSN) when you create a project to start monitoring events in your app. DSN tells the Sentry SDK where to send events so the events are associated with the correct project.</br></br>
+**SampleRate**: Configures the sample rate for error events, in the range of 0.0 to 1.0. The default is 1.0 which means that 100% of error events are sent. If set to 0.1 only 10% of error events will be sent. Events are picked randomly.
 
-Initialize in the Main method in Program.cs:
-```C#
-using Sentry;
-
-using (SentrySdk.Init(o =>
-{
-    o.Dsn = "https://examplePublicKey@o0.ingest.sentry.io/0";
-    o.MaxBreadcrumbs = 50;
-    o.Debug = true;
-})
-{
-    // app code here
-}
-```
-**Dsn**: Sentry automatically assigns you a Data Source Name (DSN) when you create a project to start monitoring events in your app. DSN tells the Sentry SDK where to send events so the events are associated with the correct project.</br></br>
-**Debug**: Turns debug mode on or off. If debug is enabled SDK will attempt to print out useful debugging information if something goes wrong with sending the event. The default is always false.</br></br>
-**MaxBreadcrumbs**: This variable controls the total amount of breadcrumbs that should be captured. This defaults to 100.
 
 ***
 
 #### PostgreSQL database connection
+
+By default, the database is configured as in-memory, this is configured in the appsettingss.json:
+```shell
+"UseInMemoryDatabase": "true",
+"ConnectionStrings": {
+"DefaultConnection": "Host=localhost;Port=5432;Username=***;Password=***;Database=***;"
+}
+```
+To swop this out for a PostgreSQL database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the PostgreSQL DB connection string details to ```"ConnectionStrings"```
 
 ***
 
 #### SQL Server database connection
 
 
+By default, the database is configured as in-memory, this is configured in the appsettingss.json:
+```shell
+"UseInMemoryDatabase": "true",
+"ConnectionStrings": {
+"DefaultConnection": "Host=localhost;Port=5432;Username=***;Password=***;Database=***;"
+}
+```
+To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the SQL Server DB connection string details to ```"ConnectionStrings"```
+
+***
 
 ## Developing
 
@@ -124,6 +115,9 @@ And again you'd need to tell what the previous code actually does.
 
 ### Intent architect
 This project was generated using Application templates created by the Intent Architect and The Delta platform team. Here is the link to the [Intent Architect website](https://intentarchitect.com/docs/articles/getting-started/welcome/welcome.html). For more information on how the Application templates work, head over to the documentation on [gitbook](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/mgu3uWRrevqSfLSu6Yml/platform-application-templates/overview)
+
+### ASP.NET Core
+
 
 
 ### Clean architecture
