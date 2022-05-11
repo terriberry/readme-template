@@ -49,7 +49,7 @@ Swagger is automatically configured and can be accessed by appending the localho
 
 
 ### Initial Configuration
-
+***
 #### Sentry
 Sentry captures data by using an SDK within your application’s runtime. Here is the setup guide from their [website](https://docs.sentry.io/platforms/dotnet/)
 
@@ -79,8 +79,11 @@ using (SentrySdk.Init(o =>
 **Debug**: Turns debug mode on or off. If debug is enabled SDK will attempt to print out useful debugging information if something goes wrong with sending the event. The default is always false.</br></br>
 **MaxBreadcrumbs**: This variable controls the total amount of breadcrumbs that should be captured. This defaults to 100.
 
+***
+
 #### PostgreSQL database connection
 
+***
 
 #### SQL Server database connection
 
