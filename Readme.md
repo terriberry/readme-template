@@ -86,16 +86,9 @@ To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to `
 
 ## Developing
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
+### Development using Intent Architect along side your IDE of choice
+A detailed guide on using Intent Architect is documented in the runbook [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/overview)
 
-
-### Building
-
-
-```shell
-something
-```
 
 ## Introduction
 
