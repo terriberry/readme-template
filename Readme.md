@@ -63,10 +63,10 @@ By default, the database is configured as in-memory, this is configured in the a
 ```shell
 "UseInMemoryDatabase": "true",
 "ConnectionStrings": {
-"DefaultConnection": "Host=localhost;Port=5432;Username=***;Password=***;Database=***;"
+ "DefaultConnection": "Host=localhost;Port=5432;Username=***;Password=***;Database=***;"
 }
 ```
-To swop this out for a PostgreSQL database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the PostgreSQL DB connection string details to ```"ConnectionStrings"```
+To swop this out for a PostgreSQL database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the PostgreSQL DB connection string details under ```"ConnectionStrings"```
 
 ***
 
@@ -77,10 +77,10 @@ By default, the database is configured as in-memory, this is configured in the a
 ```shell
 "UseInMemoryDatabase": "true",
 "ConnectionStrings": {
-"DefaultConnection": "Host=localhost;Port=5432;Username=***;Password=***;Database=***;"
+  "DefaultConnection": "Server=.;Initial Catalog=NewApplication3;Integrated Security=true;MultipleActiveResultSets=True"
 }
 ```
-To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the SQL Server DB connection string details to ```"ConnectionStrings"```
+To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the SQL Server DB connection string details under ```"ConnectionStrings"```
 
 ***
 
@@ -97,12 +97,6 @@ the project further:
 something
 ```
 
-
-### Deploying / Publishing
-
-```shell
-something
-```
 ## Introduction
 
 ### Intent architect
