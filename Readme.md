@@ -28,8 +28,8 @@ Head to the directory containing the Program.cs file and run the following comma
 dotnet build
 dotnet run
 ```
-The project is by default running on localhost: ```http://localhost:63144/```.
-Swagger is pre-configured and will automatically route to ```http://localhost:63144/index.html``` which displays the swagger doc
+The project is by default running on localhost: ```http://localhost:xxxxx/```.
+Swagger is pre-configured and will automatically route to ```http://localhost:xxxxx/index.html``` which displays the swagger doc
 
 ## Initial Configuration
 
