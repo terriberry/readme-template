@@ -6,6 +6,7 @@
 
 A brief description of your project, what it is used for and how does life get
 awesome when someone starts to use it.
+</br></br></br>
 
 ## Installing / Getting started
 
@@ -30,6 +31,7 @@ dotnet run
 ```
 The project is by default running on localhost: ```http://localhost:xxxxx/```.
 Swagger is pre-configured and will automatically route to ```http://localhost:xxxxx/index.html``` which displays the swagger doc
+</br></br></br>
 
 ## Initial Configuration
 
@@ -81,14 +83,13 @@ By default, the database is configured as in-memory, this is configured in the a
 }
 ```
 To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the SQL Server DB connection string details under ```"ConnectionStrings"```
-
-***
+</br></br></br>
 
 ## Developing
 
 ### Development using Intent Architect along side your IDE of choice
 A detailed guide on using Intent Architect is documented in the runbook [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/overview)
-
+</br></br></br>
 
 ## Introduction
 
