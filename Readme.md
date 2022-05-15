@@ -86,22 +86,22 @@ To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to `
 Below are steps required to start developing an existing project created using Intent Architect:
 
 ### Install and setup Intent Architect
-A detailed guide on how to install and setup Intent Architect is documented [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/setup). Below is a short summary of the steps in the guide:</br></br>
-**Step 1**: Head over to the download page from Intent Architect [here](https://intentarchitect.com/#/downloads) and download and install the latest version of the software </br>
-**Step 2**: Notify the Platform team that you are registering a new account with Intent Architect. Once confirmed with the team, create an account with Intent Architect using this [link](https://intentarchitect.com/#/user-access/register) and then log in</br>
-**Step 3**: Clone the Clean CQRS application template repo from The-Delta-Studio Github repo [here](https://github.com/The-Delta-Studio/dpfm-modules-dotnet)</br>
-**Step 4**: Head into the cloned folder which will be called ```dpfm-modules-dotnet``` and build the ```TDS.Modules.sln``` solution file </br>
-**Step 5**: Lastly, add the path of the ```Intent.Modules``` folder (inide the cloned repo) into the Asset Repositories under settings in Intent Architect and give give it a name e.g. ```TDS Clean API```</br>
+The first thing that is required before any dev work is to install and setup Intent Architect. A detailed guide on how to install and setup Intent Architect is documented [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/setup). Below is a short summary of the steps in the guide:</br>
+>**Step 1**: Head over to the download page from Intent Architect [here](https://intentarchitect.com/#/downloads) and download and install the latest version of the software</br></br>
+**Step 2**: Notify the Platform team that you are registering a new account with Intent Architect. Once confirmed with the team, create an account with Intent Architect using this [link](https://intentarchitect.com/#/user-access/register) and then log in</br></br>
+**Step 3**: Clone the Clean CQRS application template repo from The-Delta-Studio Github repo [here](https://github.com/The-Delta-Studio/dpfm-modules-dotnet)</br></br>
+**Step 4**: Head into the cloned folder which will be called ```dpfm-modules-dotnet``` and build the ```TDS.Modules.sln``` solution file</br></br>
+**Step 5**: Lastly, add the path of the ```Intent.Modules``` folder (inside the cloned repo) into the Asset Repositories under settings in Intent Architect and give give it a name e.g. ```TDS Clean API```
 
-The above steps are very short summaries and is intended to give a short overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a full step by step guide.
+This is a very short summary and is intended to give an overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a full step by step guide.
 
 ### Open the existing project in Intent
-In most cases, the project will have already been created by Intent, and you will be required to continue with the development. Below are the steps to get you started with an already existsing project using Intent:</br></br>
-**Step 1**: Start by cloning the project from the Github repo into your local machine </br>
-**Step 2**: Open the ```.isln``` file, this will open Intent Architect with the necessary files for the project. The ```.isln``` file is placed inside the ```intent``` folder</br>
-**Step 3**: Open the ```.sln``` file inside the IDE of your choice.  This is the codebase for the project. Now you have the recommended setup in place i.e. the ```.isln``` open in Intent Architect and ```.sln``` open in the IDE of choice</br>
-**Step 4**: In Intent Architect, the entity classes are designed and built using UML class diagrams and this can be accessed by clicking on ```Domain``` in the left sidebar menu. The business logic such as CRUD and endpoints can be accessed and modified by clicking on ```Services``` in the left sidebar menu</br>
-**Step 5**: After making changes in Intent Architect, save this by pressing ```⌘S``` or ```Ctrl S``` and run the Software Factory. The 
+In most cases, the project will have already been created, and you are required to continue with the development. Below are the steps to get you started with an already existsing project:</br>
+>**Step 1**: Start by cloning the project from the Github repo into your local machine </br></br>
+**Step 2**: Open the ```.isln``` file, this will open Intent Architect with the necessary files for the project. The ```.isln``` file is placed inside the ```intent``` folder</br></br>
+**Step 3**: Open the ```.sln``` file inside the IDE of your choice.  This is the codebase for the project. Now you have the recommended setup in place i.e. the ```.isln``` open in Intent Architect and ```.sln``` open in the IDE of choice</br></br>
+**Step 4**: In Intent Architect, the entity classes are designed and built using UML class diagrams and this can be accessed by clicking on ```Domain``` in the left sidebar menu. The business logic such as CRUD and endpoints can be accessed and modified by clicking on ```Services``` in the left sidebar menu</br></br>
+**Step 5**: After making changes in Intent Architect, save this by pressing ```⌘ S``` or ```Ctrl S``` and run the Software Factory. The 
 
 For more information on how the development process with Intent Architect works, [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/open-a-pre-existing-project) is a detailed guide that shows this step by step.
 
