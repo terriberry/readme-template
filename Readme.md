@@ -160,13 +160,13 @@ Below are the steps:
 >```shell
 >Add-Migration <migration name>
 >```
-</br></br>
+</br>
 
 ### Adding business logic
 This is where CRUD, DTOs, validations, endpoints amongst other are designed and implemented. Here is a [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/add-your-business-logic) to a detailed guide to show you how this is done step by step.</br></br>
 
 ### Creating a new project using Intent
-If you decide to create an entirely new project using Intent Architect, here is the [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/create-and-configure-the-project) to show to exactly how to do this.
+If you decide to create an entirely new project using Intent Architect, here is the [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/create-and-configure-the-project) that shows you how to do this step by step.
 </br></br></br>
 
 ## Introduction
