@@ -1,4 +1,4 @@
-
+  
 <img position="right" src="https://bulungula-tech-centre.github.io/assets/images/team/delta.png" alt="drawing" width="150"/>
 
 # Name of the project
@@ -33,7 +33,7 @@ Swagger is pre-configured and will automatically route to ```http://localhost:xx
 Below are the initial configurations for the project: </br></br>
 
 ### ASPDOTNETCORE_ENVIRONEMNT
-The ```ASPNETCORE_ENVIRONEMNT``` is set in the ```launchsettings.json``` file. The environment can be set to ```Local```, ```Development``` or ```Production``` depending on what environment the application is at.</br>
+The ```ASPNETCORE_ENVIRONEMNT``` is set in the ```launchsettings.json``` file. The environment can be set to ```Local```, ```Development``` or ```Production``` depending on what environment the application is at:</br>
 ```Local```: Developer's desktop/workstation</br>
 ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development) "Sandbox (software development)") where unit testing may be performed by the developer</br>
 ```Production```: Serves end-users/clients</br>
@@ -83,9 +83,35 @@ To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to `
 </br></br></br>
 
 ## Developing
+Below are steps required to start developing an existing project created using Intent Architect:
 
-### Migrations
+### Install and setup Intent Architect
+A detailed guide on how to install and setup Intent Architect is documented [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/setup). Below is a short summary of the steps in the guide:</br>
+Step 1: Head over to the download page from Intent Architect [here](https://intentarchitect.com/#/downloads) and download and install the latest version of the software </br>
+Step 2: Notify the Platform team that you are registering a new account with Intent Architect. Once confirmed with the team, create an account with Intent Architect using this [link](https://intentarchitect.com/#/user-access/register) and then log in</br>
+Step 3: Clone the Clean CQRS application template repo from The-Delta-Studio Github repo [here](https://github.com/The-Delta-Studio/dpfm-modules-dotnet)</br>
+Step 4: Head into the cloned folder which will be called ```dpfm-modules-dotnet``` and build the ```TDS.Modules.sln``` solution file </br>
+Step 5: Lastly, add the path of the ```Intent.Modules``` folder (inide the cloned repo) into the Asset Repositories under settings in Intent Architect and give give it a name e.g. ```TDS Clean API```</br>
+
+The above steps are very short summaries and is intended to give a short overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a full step by step guide.
+
+### Open the existing project in Intent
+In most cases, the application will have already been created using the Application template and Intent, and you will be required to continue with the development. </br>
+Step 1: Start by cloning the project repo into your local machine </br>
+Step 2: 
+
+
+### Running migrations
 The entity classes and in code and the database schema are decoupled during development. Migration is used to incrementally sync the entity classes with the database schema. EF Core is the ORM that performs the migrations and it generates the necesary migration files to implement the changes. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is more information in migrations using EF Core.
+
+### Adding business logic
+
+### Initial configurations
+
+
+
+
+
 
 **Required parameter:**</br>
 **SentryDsn**: Sentry automatically assigns you a Data Source Name (DSN) when you create a project to start monitoring events in your app. DSN tells the Sentry SDK where to send events so the events are associated with the correct project.</br>
@@ -93,10 +119,9 @@ The entity classes and in code and the database schema are decoupled during deve
 **Optional parameters:**</br>
 **SentrySampleRate**: Configures the sample rate for error events, in the range of 0.0 to 1.0. The default is 1.0 which means that 100% of error events are sent. If set to 0.1 only 10% of error events will be sent. Events are picked randomly.
 
+### Create a new project using Intent
 
-### Development using Intent Architect along side your IDE of choice
-A detailed guide on using Intent Architect is documented in the runbook [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/overview)
-</br></br></br>
+
 
 ## Introduction
 
