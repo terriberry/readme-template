@@ -32,8 +32,8 @@ Swagger is pre-configured and will automatically route to ```http://localhost:xx
 ## Initial Configuration
 Below are the initial configurations for the project: </br></br>
 
-### ASPDOTNETCORE_ENVIRONEMNT
-The ```ASPNETCORE_ENVIRONEMNT``` is set in the ```launchsettings.json``` file. The environment can be set to ```Local```, ```Development``` or ```Production``` depending on what environment the application is at:</br>
+### Deployment environments
+The deployment environment is set under ```ASPNETCORE_ENVIRONEMNT``` and is stored inside the ```launchsettings.json``` file. The environment can be set to ```Local```, ```Development``` or ```Production``` depending on what environment the application is at:</br>
 ```Local```: Developer's desktop/workstation</br>
 ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development) "Sandbox (software development)") where unit testing may be performed by the developer</br>
 ```Production```: Serves end-users/clients</br>
@@ -95,22 +95,39 @@ The first thing that is required before any dev work is to install and setup Int
 
 This is a very short summary and is intended to give an overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a full step by step guide.
 
-### Open the existing project in Intent
+### Working with existing project in Intent
 In most cases, the project will have already been created, and you are required to continue with the development. Below are the steps to get you started with an already existsing project:</br>
 >**Step 1**: Start by cloning the project from the Github repo into your local machine </br></br>
 **Step 2**: Open the ```.isln``` file, this will open Intent Architect with the necessary files for the project. The ```.isln``` file is placed inside the ```intent``` folder</br></br>
 **Step 3**: Open the ```.sln``` file inside the IDE of your choice.  This is the codebase for the project. Now you have the recommended setup in place i.e. the ```.isln``` open in Intent Architect and ```.sln``` open in the IDE of choice</br></br>
 **Step 4**: In Intent Architect, the entity classes are designed and built using UML class diagrams and this can be accessed by clicking on ```Domain``` in the left sidebar menu. The business logic such as CRUD and endpoints can be accessed and modified by clicking on ```Services``` in the left sidebar menu</br></br>
-**Step 5**: After making changes in Intent Architect, save this by pressing ```⌘ S``` or ```Ctrl S``` and run the Software Factory. The 
+**Step 5**: After making changes in Intent Architect, save this by pressing ```⌘ + S``` or ```Ctrl + S``` and run the Software Factory and apply the staged changes. More information about Software Factory is given under the ```Running the software factory``` section below
+
+This is the general work flow using the Intent Architect software i.e. make domain and service layer changes using the designers in Intent Architect, run the software factory to implement the changes and run the code inside the IDE of choice.</br></br>
 
 For more information on how the development process with Intent Architect works, [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/open-a-pre-existing-project) is a detailed guide that shows this step by step.
 
 
 ### Running the software factory
+The Software Factory is where the magic happens. When run by pressing ```F5```, or simply by clicking ```Run Software Factory```, the following process is initiated:
+1. Examines the changes made in the Domain and Service designers (the entity classes, the business logic etc.)
+2. Auto-generates and modifies the necessary C# files to implement the changes
+3. Lists all the files generated and modified into a staging environment which you can examine
+4. Allows you to choose the files to apply the changes for and when you click ```APPLY CHANGES```, the change/s are automatically implemented in the codebase
 
-
+ 
 ### Running migrations
-The entity classes and in code and the database schema are decoupled during development. Migration is used to incrementally sync the entity classes with the database schema. EF Core is the ORM that performs the migrations and it generates the necesary migration files to implement the changes. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is more information in migrations using EF Core.
+The entity classes in code and the database schema are decoupled during development. And therefore migration is used to incrementally sync the entity classes with the database schema. EF Core is the ORM that performs the migrations and it generates the necessary migration files to implement the changes. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is an overview of migrations using EF Core from Microsoft for more information.</br></br>
+
+Every time there is a change to the entity classes (by using the Domain designer in Intent Architect), the entity classes in the codebase will be out of sync with the database. In order to sync, perform the migrations as follows:
+>**Step 1**: Head over to the ```.Infrastructure``` folder in the codebase in the IDE of choice. This is where the database context: ```ApplicationDbContext.cs``` is stored </br></br>
+>**Step 2**: In case there are multiple deployment environments 
+>Using **dotnet CLI**:
+>```shell
+>dotnet ef 
+>```
+
+
 
 ### Adding business logic
 
