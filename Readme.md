@@ -31,7 +31,7 @@ Swagger is pre-configured and will automatically route to ```http://localhost:xx
 
 ## Configurations
 
-If you are developing on an existing project, most of the **configurations below will already have been set** during the initial project creation process. The configurations are listed here to let the developer know where everything is stored and also for developers that are creating new projects using Intent, who will need to set the initial configurations.
+If you are developing on an existing project, most of the **configurations below will already have been set** during the initial project creation process. The configurations are listed here to let the developer know where everything is stored and also for developers that are creating new projects using Intent, who will need to set the initial configurations.</br></br>
 
 
 ### Deployment environments
@@ -39,28 +39,30 @@ The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEM
 
 - ```Local```: Developer's desktop/workstation</br>
 - ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development) "Sandbox (software development)") where unit testing may be performed by the developer</br>
-- ```Production```: Serves end-users/clients</br>
+- ```Production```: Serves end-users/clients</br></br>
+
 
 ### appsettings.json template
 There will be different appsettings.json files depending on the different deployment environments the application is available for. For example, for the 3 deployment environments listed above, the appsettings.json will be: ```appsettings.Local.json```, ```appsettings.Development.json``` and ```appsettings.Production.json``` respectively.
 
-When creating the project for the first time using Intent, the appsettings.json template will be create for you. Create the specific appsettings.json file depending on the deployment environment options available and copy paste the template code and make the necessary changes.
+When creating the project for the first time using Intent, the appsettings.json template will be create for you. Create the specific appsettings.json file depending on the deployment environment options available and copy paste the template code and make the necessary changes.</br></br>
 
 ### appsettings.json and environment variable
 There are 2 places where configuration settings and keys can be stored namely the ```appsettings.<deployment env>.json``` and the ```environmentVariables``` inside the ```launchsettings.json```.
-Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVariables```  and general settings such as ```IpRateLimitOptions``` are stored inside ```appsettings.<deployment env>.json```.
+Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVariables```  and general settings such as ```IpRateLimitOptions``` are stored inside ```appsettings.<deployment env>.json```.</br></br>
 
 ### Sentry
 Sentry captures data by using an SDK within the application’s runtime. Here is a guide from their [website](https://docs.sentry.io/platforms/dotnet/).
 All Sentry configurations are stored inside the ```appsettings.<deployment env>.json``` file. </br>
 
-Below are the available configuration parameters: </br></br>
+Below are the available configuration parameters: </br>
 
 **Required parameter:**</br>
 - **SentryDsn**: Sentry automatically assigns you a Data Source Name (DSN) when you create a project to start monitoring events in your app. DSN tells the Sentry SDK where to send events so the events are associated with the correct project.</br>
 
 **Optional parameters:**</br>
 - **SentrySampleRate**: Configures the sample rate for error events, in the range of 0.0 to 1.0. The default is 1.0 which means that 100% of error events are sent. If set to 0.1 only 10% of error events will be sent. Events are picked randomly.
+</br></br>
 
 
 ### Serilog & AWS CloudWatch
@@ -74,7 +76,7 @@ Logging has been set up with [Serilog](https://serilog.net/) that performs conso
 - 404 Not Found
 - 500 Internal Server Error
 
-Additional logging is welcome as long as sensitive information is not divulged. Some good tips and hints on how to effectively log can be found [here](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html). Note that all unhandled exceptions are logged to [Sentry](https://sentry.io/welcome/?utm_source=google&utm_medium=cpc&utm_campaign=9575834316&content=445957162983&utm_term=sentry&gclid=Cj0KCQiAs5eCBhCBARIsAEhk4r54RrW4n0PC5i296nyraRtipzDHpVX2el6yWdkId9Vmz7KB6aq4Vc0aAixkEALw_wcB).
+Additional logging is welcome as long as sensitive information is not divulged. Some good tips and hints on how to effectively log can be found [here](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html). Note that all unhandled exceptions are logged to [Sentry](https://sentry.io/welcome/?utm_source=google&utm_medium=cpc&utm_campaign=9575834316&content=445957162983&utm_term=sentry&gclid=Cj0KCQiAs5eCBhCBARIsAEhk4r54RrW4n0PC5i296nyraRtipzDHpVX2el6yWdkId9Vmz7KB6aq4Vc0aAixkEALw_wcB).</br></br>
 
 ### PostgreSQL database connection
 
@@ -87,7 +89,7 @@ By default, the database is configured as in-memory, this is configured in the `
 ```
 To swop this out for a PostgreSQL database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the PostgreSQL DB connection string details under ```"ConnectionStrings"```.</br></br>
 
-Check that the database connection is successfully created by adding and running an initial migration. Details on how to run migrations is detailed under ```Running migrations``` under ```Developing using Intent Architect``` below.
+Check that the database connection is successfully created by adding and running an initial migration. Details on how to run migrations is detailed under ```Running migrations``` under ```Developing using Intent Architect``` below.</br></br>
 
 
 
@@ -117,7 +119,7 @@ The first thing that is required before any dev work can begin is the installati
 **Step 4**: Head into the local repo which will be called ```dpfm-modules-dotnet``` and build the ```TDS.Modules.sln``` solution file</br></br>
 **Step 5**: Lastly, add the path of the ```Intent.Modules``` folder i.e. ```../dpfm-modules-dotnet/Intent.Modules``` into Asset Repositories under settings in Intent Architect and give it a name e.g. ```TDS Clean API```
 
-A reminder that, this is a very short summary and is intended to give an overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a step by step guide.
+A reminder that, this is a very short summary and is intended to give an overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a step by step guide.</br></br>
 
 ### Working with an existing project in Intent
 In most cases, the project will have already been created, and you are required to continue with the development. Below are the steps to get you started with an already existsing project:</br>
@@ -127,9 +129,9 @@ In most cases, the project will have already been created, and you are required 
 **Step 4**: In Intent Architect, the entity classes are designed and built using UML class diagrams and this can be accessed by clicking on ```Domain``` in the left sidebar menu. The business logic such as CRUD and endpoints can be accessed and modified by clicking on ```Services``` in the left sidebar menu</br></br>
 **Step 5**: After making changes in Intent Architect, save this by pressing ```⌘ + S``` or ```Ctrl + S``` and run the Software Factory and apply the staged changes. More information about Software Factory is given under the ```Running the software factory``` section below
 
-This is the general work flow using the Intent Architect software i.e. make domain and service layer changes using the designers in Intent Architect, run the software factory to implement the changes and run the code inside the IDE of choice.</br></br>
+This is the general work flow using the Intent Architect software i.e. make domain and service layer changes using the designers in Intent Architect, run the software factory to implement the changes and run the code inside the IDE of choice.</br>
 
-For more information on how the development process with Intent Architect works, [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/open-a-pre-existing-project) is a detailed guide that shows this step by step.
+For more information on how the development process with Intent Architect works, [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/open-a-pre-existing-project) is a detailed guide that shows this step by step.</br></br>
 
 
 ### Running the software factory
@@ -138,7 +140,7 @@ The Software Factory is where the magic happens. When run by pressing ```F5```, 
 2. Auto-generates and modifies the necessary C# files to implement the changes
 3. Lists all the files generated and modified into a staging environment which you can examine
 4. Allows you to choose the files to apply the changes and when you click ```APPLY CHANGES```, the change/s are automatically implemented in the codebase
-
+</br></br>
  
 ### Running migrations
 
@@ -158,14 +160,14 @@ Below are the steps:
 >```shell
 >Add-Migration <migration name>
 >```
-
+</br></br>
 
 ### Adding business logic
-This is where CRUD, DTOs, validations, endpoints amongst other are designed and implemented. Here is a [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/add-your-business-logic) to a detailed guide to show you how this is done step by step.
+This is where CRUD, DTOs, validations, endpoints amongst other are designed and implemented. Here is a [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/add-your-business-logic) to a detailed guide to show you how this is done step by step.</br></br>
 
 ### Creating a new project using Intent
 If you decide to create an entirely new project using Intent Architect, here is the [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/create-and-configure-the-project) to show to exactly how to do this.
-
+</br></br></br>
 
 ## Introduction
 
