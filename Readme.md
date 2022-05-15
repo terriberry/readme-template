@@ -86,16 +86,16 @@ To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to `
 Below are steps required to start developing an existing project created using Intent Architect:
 
 ### Install and setup Intent Architect
-The first thing that is required before any dev work is to install and setup Intent Architect. A detailed guide on how to install and setup Intent Architect is documented [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/setup). Below is a short summary of the steps in the guide:</br>
+The first thing that is required before any dev work is to install and setup Intent Architect. A detailed guide on how to do this is documented [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/setup). Below is a short summary of the steps in the guide:</br>
 >**Step 1**: Head over to the download page from Intent Architect [here](https://intentarchitect.com/#/downloads) and download and install the latest version of the software</br></br>
 **Step 2**: Notify the Platform team that you are registering a new account with Intent Architect. Once confirmed with the team, create an account with Intent Architect using this [link](https://intentarchitect.com/#/user-access/register) and then log in</br></br>
 **Step 3**: Clone the Clean CQRS application template repo from The-Delta-Studio Github repo [here](https://github.com/The-Delta-Studio/dpfm-modules-dotnet)</br></br>
-**Step 4**: Head into the cloned folder which will be called ```dpfm-modules-dotnet``` and build the ```TDS.Modules.sln``` solution file</br></br>
-**Step 5**: Lastly, add the path of the ```Intent.Modules``` folder (inside the cloned repo) into the Asset Repositories under settings in Intent Architect and give give it a name e.g. ```TDS Clean API```
+**Step 4**: Head into the local repo which will be called ```dpfm-modules-dotnet``` and build the ```TDS.Modules.sln``` solution file</br></br>
+**Step 5**: Lastly, add the path of the ```Intent.Modules``` folder i.e. ```../dpfm-modules-dotnet/Intent.Modules``` into Asset Repositories under settings in Intent Architect and give it a name e.g. ```TDS Clean API```
 
 This is a very short summary and is intended to give an overview of the Intent Architect installation and setup process. Head over to the documentation link given above for a full step by step guide.
 
-### Working with existing project in Intent
+### Working with an existing project in Intent
 In most cases, the project will have already been created, and you are required to continue with the development. Below are the steps to get you started with an already existsing project:</br>
 >**Step 1**: Start by cloning the project from the Github repo into your local machine </br></br>
 **Step 2**: Open the ```.isln``` file, this will open Intent Architect with the necessary files for the project. The ```.isln``` file is placed inside the ```intent``` folder</br></br>
@@ -113,7 +113,7 @@ The Software Factory is where the magic happens. When run by pressing ```F5```, 
 1. Examines the changes made in the Domain and Service designers (the entity classes, the business logic etc.)
 2. Auto-generates and modifies the necessary C# files to implement the changes
 3. Lists all the files generated and modified into a staging environment which you can examine
-4. Allows you to choose the files to apply the changes for and when you click ```APPLY CHANGES```, the change/s are automatically implemented in the codebase
+4. Allows you to choose the files to apply the changes and when you click ```APPLY CHANGES```, the change/s are automatically implemented in the codebase
 
  
 ### Running migrations
