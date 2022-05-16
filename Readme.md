@@ -1,5 +1,5 @@
-  
-<img position="right" align="right" src="https://bulungula-tech-centre.github.io/assets/images/team/delta.png" alt="drawing" width="300"/>
+
+<img position="right" align="right" alt="delta-removebg-preview" src="https://user-images.githubusercontent.com/103587065/168614183-fc608d00-4186-4deb-9551-b03693a2f16c.png">
 
 # Name of the project
 > Additional information or tagline
