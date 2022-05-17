@@ -1,11 +1,14 @@
 # Running migrations using EF Core
 
-Before this step, make sure 2 things: 
-- the database is connected. Instructions on how to configure the database is given above under the ```Configurations``` section.</br>
-- the ```UseInMemory``` key is set to ```false```
-The entity classes in code and the actual database are decoupled during development. And therefore migrations are used to incrementally sync the entity classes with the database. EF Core is used for migrations. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is an overview of migrations using EF Core for more information and [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/build-your-domain-layer/add-and-run-migrations) is a link to the Platform tema's detailed documentation on how to perform the migrations.</br>
+The entity classes in code and the actual database are decoupled during development. And therefore migrations are used to incrementally sync the entity classes with the database. EF Core is used for migrations. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is an overview of migrations using EF Core for more information and [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/build-your-domain-layer/add-and-run-migrations) is a link to the Platform team's detailed documentation on how to perform the migrations.</br>
 
-Below are the steps:
+Before this step, make sure of the following:
+
+1. the database is connected. Instructions on how to configure the database is given above under the ```Configurations``` section.</br>
+2. the ```UseInMemory``` key is set to ```false```
+
+</br>
+
 >**Step 1**: There may be multiple deployment environments set up for the project and to prevent accidentally migrating to the wrong environment, explicitly state the deployment environment by running:
 >- Visual Studios package manager: ```$env:ASPNETCORE_ENVIRONMENT='<environment e.g. Local>'```</br>
 >- Mac on terminal: ```export ASPNETCORE_ENVIRONMENT='<environment e.g. Local>'```</br>
