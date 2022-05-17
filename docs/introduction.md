@@ -5,18 +5,24 @@ Below are summaries of the basic concepts relevant to the project:
 ## Intent Architect
 This project was generated using Application templates created by the Intent Architect and The Delta platform team. Here is the link to the [Intent Architect website](https://intentarchitect.com/docs/articles/getting-started/welcome/welcome.html). For more information on the different application templates available and how they work, head over to The Delta Platform team's documentation on [gitbook](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/mgu3uWRrevqSfLSu6Yml/platform-application-templates/overview)
  
+</br>
+ 
 ## Clean CQRS API high level architecture
-<img width="800" src="https://user-images.githubusercontent.com/103587065/168816156-460e98bf-f995-469d-9a56-fff45a63c903.png" />
+<img src="https://user-images.githubusercontent.com/103587065/168816156-460e98bf-f995-469d-9a56-fff45a63c903.png" />
 
+</br>
 
 ## CQRS & MediatR
 [CQRS](https://www.ibm.com/cloud/architecture/architectures/event-driven-cqrs-pattern/) is a pattern that splits the command and query responsibility into separate classes. This means that reads are sperate from writes. It aims to maximise performance, scalability and simplicity.
 
 [MediatR](https://dotnetcoretutorials.com/2019/04/30/the-mediator-pattern-part-3-mediatr-library/) is a package that helps manage the flow of traffic in a manner that upholds the separation of concern principle and minimises dependencies. It simply uses handlers along with models to route traffic to the correct place. It also has built-in behaviours that can easily be attached before and/or after each request.
 
+</br>
+
 ## Validation
 All validation of requests is to be done using [fluent validator](https://fluentvalidation.net/). 
 
+</br>
 
 ## Clean architecture
 
