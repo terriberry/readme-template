@@ -1,10 +1,10 @@
 # Configurations
 
-Below are the configurations for the project:
+Below are all the configurations for the project:
 
 
 ## Deployment environments
-The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEMNT``` key stored inside the ```launchsettings.json``` file. This can be set to ```Local```, ```Development``` or ```Production``` depending on the desired deployment environment:</br></br>
+The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEMNT``` key stored inside the ```launchsettings.json``` file. By default, it is set to ```Local```, however, this can be set to ```Development``` or ```Production``` depending on the desired deployment environment to launch the project in:</br></br>
 
 - ```Local```: Developer's desktop/workstation</br>
 - ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development) "Sandbox (software development)") where unit testing may be performed by the developer</br>
@@ -13,14 +13,14 @@ The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEM
 </br>
 
 ## appsettings.json template
-There will be different appsettings.json files depending on the different deployment environments the application is available for. For example, for the 3 deployment environments listed above, the appsettings.json will be: ```appsettings.Local.json```, ```appsettings.Development.json``` and ```appsettings.Production.json``` respectively.
+There will be different appsettings.json files depending on the different deployment environments the project is available for. For example, for the 3 deployment environments listed above, the appsettings.json files will be: ```appsettings.Local.json```, ```appsettings.Development.json``` and ```appsettings.Production.json``` respectively.
 
-When creating the project for the first time using Intent, the appsettings.json template will be create for you. Create the specific appsettings.json file depending on the deployment environment options available and copy paste the template code and make the necessary changes.
+>When creating the project for the first time using Intent, an appsettings.json template will be created. Create the specific appsettings.json e.g. ```appsettings.Local.json``` file for the corresponding deployment environments, copy paste the template code and finally make the necessary changes.
 
 </br>
 
 ## appsettings.json and environment variable
-There are 2 places where configuration settings and keys can be stored namely the ```appsettings.<deployment env>.json``` and the ```environmentVariables``` inside the ```launchsettings.json```.
+There are 2 places where configuration settings and keys can be stored, namely the ```appsettings.<deployment env>.json``` and the ```environmentVariables``` inside the ```launchsettings.json```.
 
 Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVariables```  and general settings such as ```IpRateLimitOptions``` are stored inside ```appsettings.<deployment env>.json```.
 
@@ -28,7 +28,8 @@ Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVari
 
 ## Sentry
 Sentry captures data by using an SDK within the application’s runtime. Here is a guide from their [website](https://docs.sentry.io/platforms/dotnet/).
-All Sentry configurations are stored inside the ```appsettings.<deployment env>.json``` file. </br>
+All Sentry configurations are stored inside the ```appsettings.<deployment env>.json``` file. Sentry is by default not enabled for the ```Local``` deployment environment.
+> :heavy_exclamation_mark: Do not enable Sentry for ```Local``` deployment environments</br>
 
 Below are the available configuration parameters: </br>
 
