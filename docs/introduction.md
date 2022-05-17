@@ -1,3 +1,7 @@
+# Introduction
+
+Below are summaries of the basic concepts relevant to the project:
+
 ## Intent Architect
 This project was generated using Application templates created by the Intent Architect and The Delta platform team. Here is the link to the [Intent Architect website](https://intentarchitect.com/docs/articles/getting-started/welcome/welcome.html). For more information on the different application templates available and how they work, head over to The Delta Platform team's documentation on [gitbook](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/mgu3uWRrevqSfLSu6Yml/platform-application-templates/overview)
  
