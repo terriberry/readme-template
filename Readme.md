@@ -142,8 +142,10 @@ The Software Factory is where the magic happens. When run by pressing ```F5```, 
  
 ### Running migrations
 
-Before this step, make sure the database is connected. Instructions on how to configure the database is given above under the ```Configurations``` section.</br>
-The entity classes in code and the actual database are decoupled during development. And therefore migrations are used to incrementally sync the entity classes with the database. EF Core is used. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is an overview of migrations using EF Core for more information.</br>
+Before this step, make sure 2 things: 
+- the database is connected. Instructions on how to configure the database is given above under the ```Configurations``` section.</br>
+- the ```UseInMemory``` key is set to ```false```
+The entity classes in code and the actual database are decoupled during development. And therefore migrations are used to incrementally sync the entity classes with the database. EF Core is used for migrations. [Here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/?tabs=vs) is an overview of migrations using EF Core for more information and [here](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/build-your-domain-layer/add-and-run-migrations) is a link to the Platform tema's detailed documentation on how to perform the migrations.</br>
 
 Below are the steps:
 >**Step 1**: There may be multiple deployment environments set up for the project and to prevent accidentally migrating to the wrong environment, explicitly state the deployment environment by running ```$env:ASPNETCORE_ENVIRONMENT='<environment e.g. Local>'``` for Visual Studios package manager, ```export ASPNETCORE_ENVIRONMENT='<environment e.g. Local>'``` for Mac on terminal and ```setx ASPNETCORE_ENVIRONMENT "<environment e.g. Local>" /M``` for Windows in cmd</br></br>
@@ -180,6 +182,10 @@ If you decide to create an entirely new project using Intent Architect, here is 
 
 ### Intent Architect
 This project was generated using Application templates created by the Intent Architect and The Delta platform team. Here is the link to the [Intent Architect website](https://intentarchitect.com/docs/articles/getting-started/welcome/welcome.html). For more information on the different application templates available and how they work, head over to The Delta Platform team's documentation on [gitbook](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/mgu3uWRrevqSfLSu6Yml/platform-application-templates/overview)
+ 
+### Clean CQRS API high level architecture
+<img width="800" src="https://user-images.githubusercontent.com/103587065/168816156-460e98bf-f995-469d-9a56-fff45a63c903.png" />
+
 
 ### CQRS & MediatR
 [CQRS](https://www.ibm.com/cloud/architecture/architectures/event-driven-cqrs-pattern/) is a pattern that splits the command and query responsibility into separate classes. This means that reads are sperate from writes. It aims to maximise performance, scalability and simplicity.
