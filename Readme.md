@@ -179,4 +179,4 @@ If you decide to create an entirely new project using Intent Architect, here is 
 
 
 ## Introduction
-[Here]() are the fundamental concepts relevant to the project
+[Here](docs/introduction.md) are the fundamental concepts relevant to the project
