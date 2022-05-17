@@ -27,13 +27,12 @@ Output similiar to the following appears:
 Hit F5 if using Visual Studio to build and run the project. If using the dotnet CLI, head to the directory containing the .sln file and run ```dotnet build```. After the project has built, head to the folder containing the Program.cs file and run ```dotnet run```.</br>
 The project is by default running on localhost: ```http://localhost:xxxxx/```.
 Swagger is pre-configured and will automatically route to ```http://localhost:xxxxx/index.html``` which displays the swagger doc
-</br></br></br>
+
 
 ## Configurations
 
-If you are developing on an existing project, most of the **configurations will already have been set**. The configurations are listed (here)[/docs/configuration.md] to let the developer know where various configuration parameters are stored and also for developers that are creating new projects using Intent, who will need to set the initial configurations.
+If you are developing on an existing project, most of the **configurations will already have been set**. The configurations are listed [here](docs/configuration.md) to let the developer know where various configuration parameters are stored and also for developers that are creating new projects using Intent, who will need to set the initial configurations.
 
-</br></br></br>
 
 ## Developing using Intent Architect
 Below are steps required to start developing an **existing project** created using Intent Architect:
