@@ -6,7 +6,10 @@
 
 A brief description of your project, what it is used for and how does life get
 awesome when someone starts to use it.
-</br></br></br>
+</br></br>
+
+## Introduction
+[Here](docs/introduction.md) are the fundamental concepts relevant to the project
 
 ## Installing and running the project 
 
@@ -79,5 +82,4 @@ This is where CRUD, DTOs, validations, endpoints amongst other are designed and 
 If you decide to create an entirely new project using Intent Architect, here is the [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/create-and-configure-the-project) to show to exactly how to do this.
 
 
-## Introduction
-[Here](docs/introduction.md) are the fundamental concepts relevant to the project
+
