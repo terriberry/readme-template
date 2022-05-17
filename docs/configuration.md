@@ -1,4 +1,4 @@
-## Configuration
+## Configurations
 
 Below are the configurations for the project:
 
