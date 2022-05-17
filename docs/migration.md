@@ -1,7 +1,4 @@
-## Running migrations using EF Core
-
-</br>
-
+# Running migrations using EF Core
 
 Before this step, make sure 2 things: 
 - the database is connected. Instructions on how to configure the database is given above under the ```Configurations``` section.</br>
