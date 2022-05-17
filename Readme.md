@@ -34,7 +34,7 @@ Swagger is pre-configured and will automatically route to ```http://localhost:xx
 
 ## Configurations
 
-If you are developing on an existing project, most of the **configurations will already have been set**. The configurations are listed [here](docs/configuration.md) to let the developer know where various configuration parameters are stored and also for developers that are creating new projects using Intent, who will need to set the initial configurations.
+[Here](docs/configuration.md) is the list of all the configuration options for this project.
 
 
 ## Developing using Intent Architect
