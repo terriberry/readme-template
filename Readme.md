@@ -70,10 +70,6 @@ The Software Factory is where the magic happens. When run by pressing ```F5```, 
 3. Lists all the files generated and modified into a staging environment which you can examine
 4. Allows you to choose the files to apply the changes and when you click ```APPLY CHANGES```, the change/s are automatically implemented in the codebase
 
- 
-### Migrations
-Migrations are done using Entity Framework Core. [Here](docs/migrationEfCore.md) is a link that details how to perform the migration
-
 
 ### Adding business logic
 This is where CRUD, DTOs, validations, endpoints amongst other are designed and implemented. Here is a [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/add-your-business-logic) to a detailed guide to show you how this is done step by step.
@@ -81,5 +77,8 @@ This is where CRUD, DTOs, validations, endpoints amongst other are designed and 
 ### Creating a new project using Intent
 If you decide to create an entirely new project using Intent Architect, here is the [link](https://app.gitbook.com/o/-MhAHQRNbXRJJAmyAX--/s/wlBDkDmB9NnayT8MEoDa/platform-application-templates/the-template-runbooks/custom-logic-apis/clean-architecture-cqrs-api/create-and-configure-the-project) to show to exactly how to do this.
 
+ 
+### Migrations
+Migrations are done using Entity Framework Core. [Here](docs/migrationEfCore.md) is a link that details how to perform the migration
 
 
