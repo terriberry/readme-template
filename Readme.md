@@ -71,8 +71,8 @@ The Software Factory is where the magic happens. When run by pressing ```F5```, 
 4. Allows you to choose the files to apply the changes and when you click ```APPLY CHANGES```, the change/s are automatically implemented in the codebase
 
  
-### Migrations using EF Core
-Migrations are done using Entity Framework Core. [Here](docs/migration.md) is a link that details how to performt the migration
+### Migrations
+Migrations are done using Entity Framework Core. [Here](docs/migrationEfCore.md) is a link that details how to perform the migration
 
 
 ### Adding business logic
