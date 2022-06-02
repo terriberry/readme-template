@@ -7,7 +7,7 @@ Below are all the configurations for the project:
 The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEMNT``` key stored inside the ```launchsettings.json``` file. By default, it is set to ```Local```, however, this can be set to ```Development``` or ```Production``` depending on the desired deployment environment to launch the project in:</br></br>
 
 - ```Local```: Developer's desktop/workstation</br>
-- ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development) "Sandbox (software development)") where unit testing may be performed by the developer</br>
+- ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development)) where unit testing may be performed by the developer</br>
 - ```Production```: Serves end-users/clients</br>
 
 </br>
