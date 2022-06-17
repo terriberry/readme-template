@@ -12,24 +12,17 @@ The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEM
 
 </br>
 
-## appsettings.json template
-There will be different appsettings.json files depending on the different deployment environments the project is available for. For example, for the 3 deployment environments listed above, the appsettings.json files will be: ```appsettings.Local.json```, ```appsettings.Development.json``` and ```appsettings.Production.json``` respectively.
-
->When creating the project for the first time using Intent, an appsettings.json template will be created. Create the specific appsettings.json e.g. ```appsettings.Local.json``` file for the corresponding deployment environments, copy paste the template code and finally make the necessary changes.
-
-</br>
-
 ## appsettings.json and environment variable
-There are 2 places where configuration settings and keys can be stored, namely the ```appsettings.<deployment env>.json``` and the ```environmentVariables``` inside the ```launchsettings.json```.
+There are 2 places where configuration settings and keys can be stored, namely in the ```appsettings.json``` file and the ```environmentVariables``` key inside the ```launchsettings.json``` file.
 
-Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVariables```  and general settings such as ```IpRateLimitOptions``` are stored inside ```appsettings.<deployment env>.json```.
+Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVariables```  and general settings such as ```IpRateLimitOptions``` are stored inside ```appsettings.json```.
 
 </br>
 
 ## Sentry
 Sentry captures data by using an SDK within the application’s runtime. Here is a guide from their [website](https://docs.sentry.io/platforms/dotnet/).
-All Sentry configurations are stored inside the ```appsettings.<deployment env>.json``` file. Sentry is by default not enabled for the ```Local``` deployment environment.
-> :heavy_exclamation_mark: Do not enable Sentry for ```Local``` deployment environments</br>
+All Sentry configurations are stored inside the ```appsettings.json``` file. Sentry is by default not enabled for the ```Local``` deployment environment.
+> **DO NOT** enable Sentry for ```Local``` deployment environments</br>
 
 Below are the available configuration parameters: </br>
 
@@ -84,4 +77,4 @@ By default, the database is configured as in-memory, this is configured in the `
 To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the SQL Server DB connection string details under ```"ConnectionStrings"```</br></br>
 
 Check that the database connection is successfully created by adding and running an initial migration. Details on how to run migrations is detailed under ```Running migrations``` under ```Developing using Intent Architect``` below.
-</br></br></br>
+</br>
