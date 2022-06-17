@@ -10,14 +10,12 @@ The deployment environment for the project is set by the ```ASPNETCORE_ENVIRONEM
 - ```Development```: Development server acting as a [sandbox](https://en.wikipedia.org/wiki/Sandbox_(software_development)) where unit testing may be performed by the developer</br>
 - ```Production```: Serves end-users/clients</br>
 
-</br>
 
 ## appsettings.json and environment variable
 There are 2 places where configuration settings and keys can be stored, namely in the ```appsettings.json``` file and the ```environmentVariables``` key inside the ```launchsettings.json``` file.
 
 Secret keys such as ```AWS_ACCESSKEY``` are stored inside the ```environmentVariables```  and general settings such as ```IpRateLimitOptions``` are stored inside ```appsettings.json```.
 
-</br>
 
 ## Sentry
 Sentry captures data by using an SDK within the application’s runtime. Here is a guide from their [website](https://docs.sentry.io/platforms/dotnet/).
@@ -32,7 +30,6 @@ Below are the available configuration parameters: </br>
 **Optional parameters:**</br>
 - **SentrySampleRate**: Configures the sample rate for error events, in the range of 0.0 to 1.0. The default is 1.0 which means that 100% of error events are sent. If set to 0.1 only 10% of error events will be sent. Events are picked randomly.
 
-</br>
 
 ## Serilog & AWS CloudWatch
 
@@ -47,34 +44,32 @@ Logging has been set up with [Serilog](https://serilog.net/) that performs conso
 
 Additional logging is welcome as long as sensitive information is not divulged. Some good tips and hints on how to effectively log can be found [here](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html). Note that all unhandled exceptions are logged to [Sentry](https://sentry.io/welcome/?utm_source=google&utm_medium=cpc&utm_campaign=9575834316&content=445957162983&utm_term=sentry&gclid=Cj0KCQiAs5eCBhCBARIsAEhk4r54RrW4n0PC5i296nyraRtipzDHpVX2el6yWdkId9Vmz7KB6aq4Vc0aAixkEALw_wcB).
 
-</br>
 
 ## PostgreSQL database connection
 
-By default, the database is configured as in-memory, this is configured in the ```appsettings.json```:
+The PostgreSQL configuration is set in the ```appsettings.json```.</br>
+Enter the PostgreSQL DB connection string details under ```""ConnectionStrings""```: </br></br>
 ```shell
-"UseInMemoryDatabase": "true",
-"ConnectionStrings": {
- "DefaultConnection": "Host=localhost;Port=5432;Username=***;Password=***;Database=***;"
-}
+  ""ConnectionStrings"": {
+    ""DefaultConnection"": ""Host=localhost;Port=5432;Username=***;Password=***;Database=***;""
+  }
 ```
-To swop this out for a PostgreSQL database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the PostgreSQL DB connection string details under ```"ConnectionStrings"```.</br></br>
+Check that the database connection is successfully created by adding and running an initial migration.
 
-Check that the database connection is successfully created by adding and running an initial migration. Details on how to run migrations is detailed under ```Running migrations``` under ```Developing using Intent Architect``` below.
-
-</br>
 
 ## SQL Server database connection
 
-
-By default, the database is configured as in-memory, this is configured in the ```appsettings.json```:
+The SQL Server configuration is set in the ```appsettings.json```.</br>
+Enter the SQL Server DB connection string details under ```""ConnectionStrings""```:</br></br>
 ```shell
-"UseInMemoryDatabase": "true",
-"ConnectionStrings": {
-  "DefaultConnection": "Server=.;Initial Catalog=NewApplication3;Integrated Security=true;MultipleActiveResultSets=True"
-}
+  ""ConnectionStrings"": {
+    ""DefaultConnection"": ""Server=.;Initial Catalog=NewApplication104;Integrated Security=true;MultipleActiveResultSets=True""
+  }
 ```
-To swop this out for a SQL Server database, set ```"UseInMemoryDatabase"``` to ```false``` and enter the SQL Server DB connection string details under ```"ConnectionStrings"```</br></br>
+Check that the database connection is successfully created by adding and running an initial migration.
 
-Check that the database connection is successfully created by adding and running an initial migration. Details on how to run migrations is detailed under ```Running migrations``` under ```Developing using Intent Architect``` below.
-</br>
+## In Memory database
+
+The appsettings.jsons will not show any ConnectionString values since in-memory was chosen.
+
+
